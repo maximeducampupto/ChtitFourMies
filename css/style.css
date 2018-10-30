@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: turquoise;
+    background: #f4f4f4;
+}
+
+h1 {
+    padding: 3rem;
+    margin: 2rem 0 7rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    background: turquoise;
+    letter-spacing: 2px;
+    color: white;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+img {
+    width: 10rem;
+    border-radius: 50%;
+    border: 5px solid turquoise;
+}
+
+#game-container img:hover {
+    animation: img-hover-animation .1s ease-in forwards;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 5rem;
+}
+
+
+#game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    position: relative;
+}
+
+#game-results {
+    display: flex;
+    width: 40vw;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 165px;
+    right: 2000px;
+}
+
+
+#game-results i {
+    font-size: 5rem;
+    position: relative;
+    top: 6rem;
+}
+
+#game-results i:hover {
+    cursor: pointer;
+
+    animation: restart-button-animation .1s ease-in forwards;
+}
+
+#restart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart p {
+    font-size: 2rem;
+    position: relative;
+    top: 6rem;
+}
+
+#who-wins {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    position: relative;
+    bottom: 3rem;
+}
+
+.game-container-anim-to-left {
+    animation: game-container-anim-to-left 2s ease-out forwards;
+}
+
+.results-container-anim-to-left {
+    animation: results-container-anim-to-left 2s ease-out forwards;
+}
+
+.game-container-anim-to-right {
+    animation: game-container-anim-to-right 2s ease-out forwards;
+}
+
+.results-container-anim-to-right {
+    animation: results-container-anim-to-right 2s ease-out forwards;
+}
+
+.help-container-anim {
+    animation: help-container-animation .6s forwards;
+}
+
+.help-disable-anim {
+    animation: help-container-disable-animation .4s ease-out forwards;
+}
+
+
+#help {
+    background-color: turquoise;
+    color: white;
+    border-radius: 10px;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+
+#help .fa-caret-left {
+    color: turquoise;
+    font-size: 5rem;
+    position: absolute;
+    bottom:  .2rem;
+    left: -1.4rem;
+}
+
+
+#help .fa-times-circle {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+}
+
+#help .fa-times-circle:hover {
+    cursor: pointer;
+}
+
+
+#score-container {
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+#score {
+    background: turquoise;
+    color: white;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+@keyframes img-hover-animation {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: turquoise;
+    }
+}
+
+@keyframes game-container-anim-to-left {
+    0% {
+        right: 0;
+    }
+    100% {
+       right: 2000px;
+    }
+}
+
+@keyframes results-container-anim-to-left {
+    0% {
+        right: -2000px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes game-container-anim-to-right {
+    0% {
+        right: 2000px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes results-container-anim-to-right {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -2000px;
+    }
+}
+
+
+@keyframes restart-button-animation {
+    0% {
+        color: turquoise;
+    }
+
+    100% {
+        color: #31afa1;
+    }
+}
+
+@keyframes help-container-animation {
+    0% {
+        opacity: 0;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    50% {
+        opacity: .5;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    100% {
+        opacity: 1;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes help-container-disable-animation {
+    0% {
+        opacity: 1;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    50% {
+        opacity: .5;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    100% {
+        opacity: 0;
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
