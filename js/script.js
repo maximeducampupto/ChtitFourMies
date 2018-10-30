@@ -5,6 +5,8 @@ var help = document.getElementById('help'),
     whoWins = document.getElementById('who-wins'),
     restart_button = document.getElementById('restart_button'),
     disableHelp = document.getElementById('disable-help'),
+    joueur_historique = document.getElementById('joueur-historique'),
+    ia_historique = document.getElementById('ia-historique'),
     joueur_a_choisi = false,
     choix_joueur = null,
     choix_IA = null,
@@ -59,89 +61,106 @@ function tourIA() {
 function comparerResultats() {
     console.log(choix_joueur, choix_IA);
     console.log(choix_joueur);
+    var imgIA = document.createElement('img'),
+        historiqueImgIa = document.createElement('img');
+        historiqueImgJoueur = document.createElement('img');
+        imgJoueur = document.createElement('img');
+
     switch(choix_joueur) {
         case 1:
 
-            var imgJoueur = document.createElement('img');
             imgJoueur.src = "./assets/img/Rock-paper-scissors_(rock).png";
+            historiqueImgJoueur.src = "./assets/img/Rock-paper-scissors_(rock).png";
             document.getElementById('img-joueur').appendChild(imgJoueur);
+            joueur_historique.appendChild(historiqueImgJoueur);
 
             if (choix_IA === 1) {
 
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(rock).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(rock).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
                 whoWins.innerHTML = "Draw!";
 
             } else if (choix_IA == 2) {
 
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(paper).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(paper).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
                 whoWins.innerHTML = "L\'IA marque un point!";
                 score_IA++;
 
             } else if (choix_IA == 3) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(scissors).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(scissors).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
 
                 whoWins.innerHTML = "Vous marquez un point!";
                 score_joueur++;
             }
             break;
         case 2:
-            var imgJoueur = document.createElement('img');
             imgJoueur.src = "./assets/img/Rock-paper-scissors_(paper).png";
+            historiqueImgJoueur.src = "./assets/img/Rock-paper-scissors_(paper).png";
             document.getElementById('img-joueur').appendChild(imgJoueur);
+            joueur_historique.appendChild(historiqueImgJoueur);
 
             if (choix_IA == 1) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(rock).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(rock).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
 
                 whoWins.innerHTML = "Vous marquez un point!";
                 score_joueur++;
 
             } else if (choix_IA == 2) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(paper).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(paper).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
 
                 whoWins.innerHTML = "Draw!";
 
             } else if (choix_IA == 3) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(scissors).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(scissors).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
 
                 whoWins.innerHTML = "L\'IA marque un point!";
                 score_IA++;
             }
             break;
         case 3:
-            var imgJoueur = document.createElement('img');
             imgJoueur.src = "./assets/img/Rock-paper-scissors_(scissors).png";
+            historiqueImgJoueur.src = "./assets/img/Rock-paper-scissors_(scissors).png";
             document.getElementById('img-joueur').appendChild(imgJoueur);
+            joueur_historique.appendChild(historiqueImgJoueur);
             if (choix_IA == 1) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(rock).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(rock).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
 
                 whoWins.innerHTML = "L\'IA marque un point!";
                 score_IA++;
 
             } else if (choix_IA == 2) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(paper).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(paper).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
                 whoWins.innerHTML = "Vous marquez un point!";
                 score_joueur++;
 
             } else if (choix_IA == 3) {
-                var imgIA = document.createElement('img');
                 imgIA.src = "./assets/img/Rock-paper-scissors_(scissors).png";
+                historiqueImgIa.src = "./assets/img/Rock-paper-scissors_(scissors).png";
                 document.getElementById('img-ia').appendChild(imgIA);
+                ia_historique.appendChild(historiqueImgIa);
                 whoWins.innerHTML = "Draw!";
             }
             break;
@@ -151,6 +170,8 @@ function comparerResultats() {
 
     document.getElementById('score_joueur').innerHTML = "Joueur: " + score_joueur;
     document.getElementById('score_ia').innerHTML = "IA: " + score_IA;
+    var historiqueBreak = document.createElement('<br>');
+    document.getElementById('historique-img-container').appendChild(historiqueBreak);
     joueur_a_choisi = true;
 
 }
